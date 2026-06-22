@@ -25,5 +25,5 @@ python juego.py
 * Papel gana a piedra.
 * Sí ambos son iguales, es un empate.
 
-**Desarrollado por Camilo Sandoval - [codesmilo.com](www.codesmilo.com)**
+**Desarrollado por Camilo Sandoval - [codesmilo.com](https://www.codesmilo.com)**
 **Estudiante de Software En Línea**
