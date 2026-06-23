@@ -9,8 +9,9 @@ nombre = input("Ingresa tu nombre porfavor: ")
 
 opcion = -1 #valor inicial para entrar al ciclo
 
-while opcion != 0:
+while opcion != 0: #Bucle infito hasta que la condicion sea falsa
     
+    #menu de opciones para el usuario 
     opcion = int(input('''                    
         Opciones a escoger
                         
@@ -26,8 +27,9 @@ while opcion != 0:
         print(f"Gracias jugar, {nombre}")
         break #uso de sentencias
 
-    computadora = random.randint(1,3)
+    computadora = random.randint(1,3) #generador de la jugada aleatoria
 
+    #bloque para mejorar los mensajes por parte de la pc
     if computadora == 1:
         comodin = "piedra"
     elif computadora == 2:
@@ -35,7 +37,7 @@ while opcion != 0:
     elif computadora == 3:
         comodin = "tijera"
 
-    print(f"DEBUG -> opcion = {opcion}")
+    #bloque para mejorar los mensajes por parte del usuario
     if opcion == 1:
         usuario = "piedra"
     elif opcion == 2:
@@ -46,8 +48,10 @@ while opcion != 0:
         print("Esa opcion, no está disponible por el momento. :( )")
         break
 
+    #mensaje informando, lo sucedido en el juego
     print(f"La computadora eligio {comodin}, mientras qué, {nombre} selecciono {usuario}")
 
+    #seccion logica del juego
     if opcion == computadora:
         print(f"Esto es un empate, ambos eligieron la misma figura {comodin}")
     elif (opcion == 1 and computadora == 3) or (opcion == 2 and computadora == 1) or (opcion == 3 and computadora == 2):
