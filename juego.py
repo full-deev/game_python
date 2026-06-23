@@ -6,38 +6,51 @@ import random
 
 print("Bienvenido al juego piedra - papel - tijera")
 nombre = input("Ingresa tu nombre porfavor: ")
-opcion = int(input('''
-                   
-    Opciones a escoger
-                    
-    piedra = 1
-    papel = 2
-    tijera = 3 
+
+opcion = -1 #valor inicial para entrar al ciclo
+
+while opcion != 0:
     
-    Elije el numero del comodin para la partida: '''))
+    opcion = int(input('''
+                    
+        Opciones a escoger
+                        
+        piedra = 1
+        papel = 2
+        tijera = 3 
+                       
+        Salir = 0
+        
+        Elije una opcion, para la partida: '''))
+    
+    if opcion == 0: #condicional para terminar el bucle
+        print(f"Gracias jugar, {nombre}")
+        break #uso de sentencias
 
-computadora = random.randint(1,3)
-print(computadora)
+    computadora = random.randint(1,3)
 
-if computadora == 1:
-    comodin = "piedra"
-elif computadora == 2:
-    comodin = "papel"
-elif computadora == 3:
-    comodin = "tijera"
+    if computadora == 1:
+        comodin = "piedra"
+    elif computadora == 2:
+        comodin = "papel"
+    elif computadora == 3:
+        comodin = "tijera"
 
-if opcion == 1:
-    usuario = "piedra"
-elif opcion == 2:
-    usuario = "papel"
-elif opcion == 3:
-    usuario = "tijera"
+    if opcion == 1:
+        usuario = "piedra"
+    elif opcion == 2:
+        usuario = "papel"
+    elif opcion == 3:
+        usuario = "tijera"
+    else:
+        print("Esa opcion, no está disponible por el momento. :( )")
+        continue
 
-print(f"La computadora eligio {comodin}, mientras qué, {nombre} selecciono {usuario}")
+    print(f"La computadora eligio {comodin}, mientras qué, {nombre} selecciono {usuario}")
 
-if opcion == computadora:
-    print("Esto es un empate")
-elif (opcion == 1 and computadora == 3) or (opcion == 2 and computadora == 1) or (opcion == 3 and computadora == 2):
-    print("Ganaste")
-else:
-    print(f"{nombre}, perdiste")
+    if opcion == computadora:
+        print(f"Esto es un empate, ambos eligieron la misma figura {comodin}")
+    elif (opcion == 1 and computadora == 3) or (opcion == 2 and computadora == 1) or (opcion == 3 and computadora == 2):
+        print(f"Ganaste{nombre}")
+    else:
+        print(f"{nombre}, perdiste")
