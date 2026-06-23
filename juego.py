@@ -11,8 +11,7 @@ opcion = -1 #valor inicial para entrar al ciclo
 
 while opcion != 0:
     
-    opcion = int(input('''
-                    
+    opcion = int(input('''                    
         Opciones a escoger
                         
         piedra = 1
@@ -36,6 +35,7 @@ while opcion != 0:
     elif computadora == 3:
         comodin = "tijera"
 
+    print(f"DEBUG -> opcion = {opcion}")
     if opcion == 1:
         usuario = "piedra"
     elif opcion == 2:
@@ -44,7 +44,7 @@ while opcion != 0:
         usuario = "tijera"
     else:
         print("Esa opcion, no está disponible por el momento. :( )")
-        continue
+        break
 
     print(f"La computadora eligio {comodin}, mientras qué, {nombre} selecciono {usuario}")
 
